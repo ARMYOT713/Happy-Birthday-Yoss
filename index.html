@@ -1,0 +1,237 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JRV-GAMING | Happy Birthday Yoss</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;
+ font-family:Georgia,serif;
+ color:#fff0fa;
+ background:radial-gradient(ellipse at top,#583568,#21172e 65%,#130f20);
+ min-height:100vh;
+ text-align:center;
+}
+header{padding:35px 15px 15px}
+h1{font-size:clamp(35px,9vw,60px);color:#f5c5ed;margin:10px}
+h2{color:#f5c5ed}
+p{line-height:1.7}
+.subtitle{color:#e3c6e6;font-style:italic}
+.container{max-width:750px;margin:auto;padding:15px}
+.panel{
+ background:#ffffff10;
+ border:1px solid #d9a7df55;
+ border-radius:22px;
+ padding:24px;
+ margin:20px 0;
+ box-shadow:0 10px 35px #0005;
+}
+button{
+ background:linear-gradient(135deg,#d78cc9,#8963b9);
+ border:0;border-radius:30px;
+ color:white;padding:14px 24px;
+ font-size:16px;font-weight:bold;
+ cursor:pointer;margin:8px;
+}
+button:active{transform:scale(.96)}
+.grid{
+ display:grid;
+ grid-template-columns:repeat(4,1fr);
+ gap:10px;
+ margin-top:20px;
+}
+.level{
+ min-height:85px;
+ background:#ffffff12;
+ border:1px solid #dca9db66;
+ border-radius:15px;
+ color:#fff;
+ display:flex;
+ flex-direction:column;
+ align-items:center;
+ justify-content:center;
+ gap:5px;
+ cursor:pointer;
+ padding:8px 3px;
+ font-size:12px;
+}
+.level span{font-size:24px}
+.level:hover{background:#a76ebc66}
+#modal{
+ display:none;position:fixed;inset:0;
+ background:#100a1eeF;
+ z-index:5;align-items:center;
+ justify-content:center;padding:20px;
+}
+.modalbox{
+ max-width:450px;width:100%;
+ background:#382644;
+ border:1px solid #e8b8e8;
+ border-radius:24px;padding:25px;
+}
+#letter{display:none}
+.flower{font-size:35px;animation:float 3s infinite ease-in-out}
+@keyframes float{
+ 50%{transform:translateY(-12px) rotate(8deg)}
+}
+footer{padding:30px;color:#d5b9d9;font-size:13px}
+@media(max-width:400px){
+ .grid{grid-template-columns:repeat(3,1fr)}
+}
+</style>
+</head>
+<body>
+
+<header>
+ <div class="flower">🌷 ✨ 🌷</div>
+ <h1>JRV-GAMING</h1>
+ <p class="subtitle">A little adventure made with love</p>
+ <h2>¡Feliz cumpleaños, Yoss! 💜</h2>
+ <p>Hoy comienza una nueva aventura...</p>
+</header>
+
+<main class="container">
+
+<section class="panel">
+ <h2>🌙 Bienvenida a tus 20 años</h2>
+ <p>
+ Querida Jocelyn, hoy no es un día cualquiera.
+ Hoy celebramos tu vida, tus sueños,
+ tus locuras y todas las historias que
+ todavía nos faltan por vivir.
+ </p>
+ <p>Este pequeño universo fue creado especialmente para ti.</p>
+ <button onclick="document.getElementById('aventura').scrollIntoView({behavior:'smooth'})">
+ Comenzar aventura ✨
+ </button>
+</section>
+
+<section class="panel" id="aventura">
+ <h2>🎮 Selecciona tu nivel</h2>
+ <p>20 niveles, 20 años y muchísimos recuerdos.</p>
+ <div class="grid" id="levels"></div>
+</section>
+
+<section class="panel">
+ <div class="flower">🦋 💐 🦋</div>
+ <h2>Una sorpresa para ti</h2>
+ <p>
+ Hay regalos que no se pueden envolver,
+ porque están hechos de recuerdos,
+ cariño y momentos compartidos.
+ </p>
+ <button onclick="showLetter()">Abrir mi regalo 💌</button>
+</section>
+
+<section class="panel" id="letter">
+ <h2>Para mi Yoss 💗</h2>
+ <p>
+ Feliz cumpleaños, mi Yoss.
+ </p>
+ <p>
+ No sé si alguna vez te he explicado
+ lo bonito que es tenerte en mi vida.
+ Hemos compartido momentos, risas,
+ ocurrencias y recuerdos que guardo
+ con muchísimo cariño.
+ </p>
+ <p>
+ Hoy cumples 20 años y deseo de todo
+ corazón que esta nueva etapa te regale
+ oportunidades, felicidad, sueños cumplidos
+ y personas que te quieran tan bonito
+ como mereces.
+ </p>
+ <p>
+ Gracias por ser parte de mi historia.
+ Ojalá todavía nos queden muchísimas
+ aventuras por vivir, historias que contar
+ y recuerdos que construir.
+ </p>
+ <p>
+ Nunca olvides lo especial que eres.
+ </p>
+ <h2>Te quiero muchísimo, Yoss. 💜</h2>
+ <p>Con cariño, Caro. 🌷</p>
+</section>
+
+</main>
+
+<div id="modal">
+ <div class="modalbox">
+  <div class="flower">🌸</div>
+  <h2 id="modalTitle"></h2>
+  <p id="modalText"></p>
+  <button onclick="closeModal()">Volver a la aventura</button>
+ </div>
+</div>
+
+<footer>
+ Hecho con muchísimo cariño para Jocelyn.<br>
+ JRV-GAMING · Una amistad, mil recuerdos. 💜
+</footer>
+
+<script>
+const titles=[
+"El comienzo",
+"El mismo nombre",
+"Amistad",
+"Casémonos",
+"Matrimonio lavanda",
+"Bro, tírame paro",
+"10 pesos de pescuezos y 15 de...",
+"Recuerdo 8",
+"Recuerdo 9",
+"Recuerdo 10",
+"Recuerdo 11",
+"Recuerdo 12",
+"Recuerdo 13",
+"Recuerdo 14",
+"Recuerdo 15",
+"Recuerdo 16",
+"Recuerdo 17",
+"Recuerdo 18",
+"Recuerdo 19",
+"El comienzo de otra aventura"
+];
+
+const messages=[
+"Todo gran juego tiene un comienzo. Y nuestra historia también. 💜",
+"Dos nombres, una coincidencia y una historia que apenas comenzaba. ✨",
+"De conversaciones a recuerdos, de momentos a una amistad especial. 🌷",
+"¡Que vivan las novias! Este nivel merece una boda legendaria. 💍",
+"Un amor de lavanda, flores y una historia para recordar. 💜",
+"Porque hasta en las aventuras más difíciles nos ayudamos. 😂",
+"Un recuerdo que merece su propio lugar en esta historia. 🍗"
+];
+
+const grid=document.getElementById("levels");
+
+titles.forEach((title,i)=>{
+ const card=document.createElement("div");
+ card.className="level";
+ card.innerHTML=`<span>${i===19?"🎂":"🌸"}</span><b>Nivel ${i+1}</b><span>${title}</span>`;
+ card.onclick=()=>openLevel(i);
+ grid.appendChild(card);
+});
+
+function openLevel(i){
+ document.getElementById("modalTitle").textContent=
+ "Nivel "+(i+1)+": "+titles[i];
+ document.getElementById("modalText").textContent=
+ messages[i] || "Este recuerdo todavía tiene una historia por descubrir. Pero hay algo seguro: eres parte de una aventura muy especial. 💗";
+ document.getElementById("modal").style.display="flex";
+}
+function closeModal(){
+ document.getElementById("modal").style.display="none";
+}
+function showLetter(){
+ document.getElementById("letter").style.display="block";
+ document.getElementById("letter").scrollIntoView({behavior:"smooth"});
+}
+</script>
+</body>
+</html>
